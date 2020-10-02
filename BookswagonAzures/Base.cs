@@ -32,22 +32,7 @@ namespace BookswagonAzures
             driver.Quit();
         }
 
-        [TearDown]
-        public void AddScreenshot()
-        {
-            if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
-            {
-
-                string path = Screenshot.Capture(driver, TestContext.CurrentContext.Test.Name + "   " + "Failed");
-                TestContext.AddTestAttachment(path, "failed");
-
-            }
-            else if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Passed)
-            {
-                string path = Screenshot.Capture(driver, TestContext.CurrentContext.Test.Name + "  " + "Passed");
-                TestContext.AddTestAttachment(path, "passed");
-            }
-        }
+      
     }
 }
 
